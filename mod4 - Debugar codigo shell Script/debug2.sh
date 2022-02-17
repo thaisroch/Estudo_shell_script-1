@@ -1,4 +1,7 @@
-#Aula 21
+#Aula 23
+#
+#utilizando o comando de debug no código: set -x ..... set +x
+#
 #!/usr/bin/env bash
 
 # listaUsuario.sh - Estrai usuários do /etc/passwd
@@ -60,6 +63,7 @@ CHAVE_MAIUSCULO=0
 
 
 # ------------------------------------EXECUÇÃO---------------------------------#
+set -x
 while test -n "$1"
 do
   case "$1" in
@@ -76,4 +80,6 @@ done
 [ $CHAVE_MAISCULO -eq 1 ] && USUARIOS=$(echo "$USUARIOS" | tr [a-z] [A-Z])
 
 echo "$USUARIOS"
+
+set +x
 # -----------------------------------------------------------------------------#
